@@ -268,7 +268,6 @@ All APIs return a standardized response:
 **Ritik Patel**
 
 ---
-
-##  Note
-
-This project is built for backend evaluation and demonstrates practical implementation of authentication, authorization, and financial data handling.
+## Further Improvement 
+* I created Jwt Authentication but that one use query again and again that can be improve.
+* For Role based i should use Enum 
