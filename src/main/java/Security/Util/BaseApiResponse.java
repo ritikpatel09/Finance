@@ -45,6 +45,14 @@ public class BaseApiResponse {
                 .status(status).build();
     }
 
+    public static BaseApiResponse ok(String message, Integer success, String status, Object data) {
+        return BaseApiResponse.builder()
+                .success(success)
+                .message(message)
+                .Data(data)
+                .status(status).build();
+    }
+
 
 }
 

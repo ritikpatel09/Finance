@@ -1,6 +1,6 @@
 package Security.Service;
 
-import Security.Dto.RegisterDto;
+import Security.Dto.RequestDto.RegisterDto;
 import Security.Entity.security.TokenAnalysis;
 import Security.Entity.security.UserData;
 import Security.Exception.InvalidException;
@@ -40,7 +40,7 @@ public class UserService {
                 .password(passwordEncoder.encode(dto.getPassword()))
                 .isActive(1)
                 .lockAccount(false)
-                .role("USER")
+                .role("VIEWER")
                 .build();
 
         userDataRepo.save(userData);

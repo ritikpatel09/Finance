@@ -1,5 +1,7 @@
 package Security.Entity.security;
 
+import Security.Entity.security.FInance.FinancialRecord;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -28,7 +30,11 @@ public class UserData implements UserDetails {
     private boolean lockAccount;
 
     @OneToMany(mappedBy = "userData",fetch = FetchType.LAZY)
+    @JsonManagedReference
     private List<TokenAnalysis> tokenAnalysis;
+
+    @OneToMany(mappedBy = "userData", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    private List<FinancialRecord> financialRecords;
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {

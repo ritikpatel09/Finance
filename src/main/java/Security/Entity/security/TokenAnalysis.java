@@ -1,7 +1,9 @@
 package Security.Entity.security;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.ToString;
 
 import java.time.LocalDateTime;
 
@@ -18,5 +20,7 @@ public class TokenAnalysis {
 
     @ManyToOne
     @JoinColumn(name = "userId" )
+    @JsonBackReference
+    @ToString.Exclude
     private UserData userData;
 }

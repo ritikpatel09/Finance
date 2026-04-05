@@ -1,4 +1,4 @@
-package Security.Dto;
+package Security.Dto.RequestDto;
 
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.Pattern;

@@ -31,7 +31,11 @@ public class JwtAuthFilter extends OncePerRequestFilter {
                                     HttpServletResponse response,
                                     FilterChain chain)
             throws ServletException, IOException {
-
+        String path = request.getServletPath();
+        if (path.startsWith("/auth")) {
+            chain.doFilter(request, response);
+            return;
+        }
         final String authHeader = request.getHeader("Authorization");
 
         String token = null;
@@ -67,9 +71,9 @@ public class JwtAuthFilter extends OncePerRequestFilter {
 
                 UsernamePasswordAuthenticationToken authToken =
                         new UsernamePasswordAuthenticationToken(
-                                userDetails,
+                                loginToken,   // 🔥 THIS IS KEY
                                 null,
-                                userDetails.getAuthorities()
+                                user.getAuthorities()
                         );
 
                 authToken.setDetails(

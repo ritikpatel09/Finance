@@ -1,5 +1,5 @@
 package Security.Controller;
-import Security.Dto.RegisterDto;
+import Security.Dto.RequestDto.RegisterDto;
 import Security.Service.UserService;
 import Security.Util.BaseApiResponse;
 import jakarta.servlet.http.HttpServletRequest;
@@ -17,7 +17,7 @@ public class SecurityController {
     private final UserService userService;
 
     @PostMapping("/register")
-    public ResponseEntity<BaseApiResponse> register(@RequestBody RegisterDto dto) {
+    public ResponseEntity<BaseApiResponse> register(@Valid @RequestBody RegisterDto dto) {
         BaseApiResponse response = userService.register(dto);
         return ResponseEntity.status(HttpStatus.OK).body(response);
     }
