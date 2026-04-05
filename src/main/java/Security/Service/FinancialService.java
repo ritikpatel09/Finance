@@ -173,7 +173,7 @@ public class FinancialService {
 
         userDataRepo.save(targetUser);
 
-        return BaseApiResponse.ok("User role updated", targetUser.getId(), "200");
+        return BaseApiResponse.ok("User role updated",1, "200");
     }
 
 

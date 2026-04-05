@@ -67,7 +67,7 @@ public class FinanceController {
         );
     }
 
-    @PutMapping("/role")
+    @PutMapping("/Updaterole")
     public ResponseEntity<BaseApiResponse> updateUserRole(
             @RequestBody UpdateRoleRequest request,
             Authentication authentication
