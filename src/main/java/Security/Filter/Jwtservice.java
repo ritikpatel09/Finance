@@ -13,7 +13,9 @@ import java.util.Date;
 @Component
 public class Jwtservice {
 
-    private final String SECRET = "mysecretkeymysecretkeymysecretkey";
+    @Value("${jwt.secret}")
+    private String SECRET;
+
     private final long EXPIRATION = 1000 * 60 * 60;
 
     private Key getSigningKey() {
