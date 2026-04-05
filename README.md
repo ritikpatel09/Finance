@@ -255,10 +255,12 @@ All APIs return a standardized response:
 
 ##  Future Improvements
 
-* Global exception handler
+* Global exception handler can be better
 * Filtering + sorting APIs
 * Dashboard analytics (income vs expense)
 * Soft delete support
+* I created Jwt Authentication but that one use query again and again that can be improve.
+* For Role based i should use Enum class
 * Unit & integration testing
 
 ---
@@ -268,6 +270,3 @@ All APIs return a standardized response:
 **Ritik Patel**
 
 ---
-## Further Improvement 
-* I created Jwt Authentication but that one use query again and again that can be improve.
-* For Role based i should use Enum 
